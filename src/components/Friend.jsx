@@ -18,19 +18,21 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   const primaryDark = palette.primary.dark;
   const main = palette.neutral.main;
   const medium = palette.neutral.medium;
-  const api = "https://sociopedia-server-pday.onrender.com";
 
   const isFriend = friends.find((friend) => friend._id === friendId);
   // console.log(isFriend);
 
   const patchFriend = async () => {
-    const response = await fetch(`${api}/users/${_id}/${friendId}`, {
-      method: "PATCH",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      `https://sociopedia-server-pday.onrender.com/users/${_id}/${friendId}`,
+      {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const data = await response.json();
     // console.log(data)
     dispatch(setFriends({ friends: data }));

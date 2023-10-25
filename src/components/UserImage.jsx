@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-const api = "https://sociopedia-server-pday.onrender.com";
 
 const UserImage = ({ image, size = "60px" }) => {
   return (
@@ -9,7 +8,7 @@ const UserImage = ({ image, size = "60px" }) => {
         width={size}
         height={size}
         alt="user"
-        src={`${api}/assets/${image}`}
+        src={`https://sociopedia-server-pday.onrender.com/assets/${image}`}
       />
     </Box>
   );

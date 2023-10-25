@@ -56,7 +56,6 @@ const Form = () => {
   const isNonMobile = useMediaQuery("(min-width: 600px)");
   const isLogin = pageType === "login";
   const isRegister = pageType === "register";
-  const api = "https://sociopedia-server-pday.onrender.com";
 
   const register = async (values, onSubmitProps) => {
     //allow us to send form info with image
@@ -71,10 +70,13 @@ const Form = () => {
     //key = 'picturePath', value = values.picture.name(that we set in the assets folder in server site)
 
     //sending formData to backend
-    const savedUserResponse = await fetch(`${api}/auth/register`, {
-      method: "POST",
-      body: formData,
-    });
+    const savedUserResponse = await fetch(
+      `https://sociopedia-server-pday.onrender.com/auth/register`,
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
     const savedUser = await savedUserResponse.json();
     //reset the form
     onSubmitProps.resetForm();
@@ -85,11 +87,14 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch(`${api}/auth/login`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values),
-    });
+    const loggedInResponse = await fetch(
+      `https://sociopedia-server-pday.onrender.com/auth/login`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      }
+    );
     //authentication will be done backend and send back token if successfully authenticated
     const loggedIn = await loggedInResponse.json();
     onSubmitProps.resetForm();

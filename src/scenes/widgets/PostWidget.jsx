@@ -36,14 +36,17 @@ const PostWidget = ({
 
   //not fully understand, go through this again
   const patchLike = async () => {
-    const response = await fetch(`{api}/posts/${postId}/like`, {
-      method: "PATCH",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ userId: loggedInUserId }),
-    });
+    const response = await fetch(
+      `https://sociopedia-server-pday.onrender.com/posts/${postId}/like`,
+      {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userId: loggedInUserId }),
+      }
+    );
     const updatedPost = await response.json();
     //information that backend sent back
     dispatch(setPost({ post: updatedPost }));
