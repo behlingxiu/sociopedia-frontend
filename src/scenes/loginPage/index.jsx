@@ -4,6 +4,10 @@ import Form from "./Form";
 const LoginPage = () => {
   const theme = useTheme();
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
+  const showAlert = () => {
+    alert(" email: 'test123@gmail.com', password: '12345678' ")
+  };
+    showAlert();
 
   return (
     <Box>
