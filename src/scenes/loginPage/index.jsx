@@ -4,7 +4,6 @@ import Form from "./Form";
 const LoginPage = () => {
   const theme = useTheme();
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
-  const showAlert = () => {
 
   useEffect(()=> {
     alert(" To log in, please use the folllowing credentials : 
