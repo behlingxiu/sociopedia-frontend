@@ -5,12 +5,13 @@ const LoginPage = () => {
   const theme = useTheme();
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
   const showAlert = () => {
+
+  useEffect(()=> {
     alert(" To log in, please use the folllowing credentials : 
           email: 'test123@gmail.com', password: '12345678' ")
-  };
+  }, [])
 
   return (
-    {showAlert()}
     <Box>
       {/* {Title Box} */}
       <Box
