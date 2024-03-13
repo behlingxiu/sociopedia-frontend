@@ -2,11 +2,6 @@ import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import Form from "./Form";
 
 const LoginPage = () => {
-
-   useEffect(()=> {
-    alert(" To log in, please use the folllowing credentials : 
-          email: 'test123@gmail.com', password: '12345678' ")
-  }, [])
   
   const theme = useTheme();
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
